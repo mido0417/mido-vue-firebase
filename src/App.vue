@@ -52,7 +52,8 @@
 </template>
 
 <script>
-import Firebase from "firebase";
+import Firebase from "firebase"
+import toastr from 'toastr'
 var config = {
   apiKey: "AIzaSyA2A9w_7GwwMsRTnKPOIz6SolXiTEIbNfM",
   authDomain: "myblog-api.firebaseapp.com",
