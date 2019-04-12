@@ -63,9 +63,9 @@ var config = {
   messagingSenderId: "435171214701"
 };
 
-let app = Firebase.initializeApp(config);
-let db = app.database();
-let booksRef = db.ref("books");
+let app = Firebase.initializeApp(config)
+let db = app.database()
+let booksRef = db.ref("books")
 export default {
   name: "app",
   firebase: {
@@ -82,14 +82,14 @@ export default {
   },
   methods: {
     addBook: function() {
-      booksRef.push(this.newBook);
-      this.newBook.title = "";
-      this.newBook.author = "";
-      this.newBook.url = "http://";
+      booksRef.push(this.newBook)
+      this.newBook.title = ""
+      this.newBook.author = ""
+      this.newBook.url = "http://"
     },
     removeBook: function(book) {
-      booksRef.child(book[".key"]).remove();
-      toastr.success("Book removed successfully");
+      booksRef.child(book[".key"]).remove()
+      toastr.success("Book removed successfully")
     }
   }
 };
