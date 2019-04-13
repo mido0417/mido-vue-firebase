@@ -1,12 +1,12 @@
 <template lang="pug">
     .page-home
-        HelloWorld(Msg="Welcome to Your Vue.js App")
+        HelloWorld
         button(@click="logout") Logout
 </template>
 
 <script>
-import firebase from "firebase";
-import HelloWorld from "@/components/HelloWorld";
+import firebase from "firebase"
+import HelloWorld from "@/components/HelloWorld"
 
 export default {
   name: "home",
