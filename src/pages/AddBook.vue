@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-link to="/home">Back To Home</router-link>
         <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Add New Books</h3>

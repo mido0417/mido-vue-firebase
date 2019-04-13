@@ -1,6 +1,8 @@
 <template lang="pug">
     .page-home
         HelloWorld
+        .wrap
+            router-link(to="/addbook") Go To AddBook(資料寫入與刪除練習) 
         button(@click="logout") Logout
 </template>
 

@@ -7,32 +7,33 @@
 </template>
 
 <script>
-import firebase from "firebase"
+import firebase from "firebase";
 
 export default {
-    name: 'login',
-    data(){
-        return{
-            email:'',
-            password:'',
-        };
-    },
-    methods: {
-        login:function(){
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-                function(user){
-                    alert('login');
-                },
-                function(err){
-                    alert('err');
-                }
-            )
-            this.$router.replace('home')
-        }
-    },
-}
+  name: "login",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    login: function() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(
+          user => {
+            this.$router.replace("home");
+          },
+          err => {
+            alert("err");
+          }
+        );
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
