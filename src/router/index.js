@@ -9,13 +9,7 @@ import Home from '@/pages/Home'
 Vue.use(Router)
 
 const router = new Router({
-  routes: [{
-      path: '*',
-      redirect: 'login',
-    }, {
-      path: '*',
-      redirect: '/',
-    }, {
+  routes: [ {
       path: '/home',
       name: 'home',
       component: Home,
