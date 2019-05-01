@@ -9,28 +9,31 @@ import Home from '@/pages/Home'
 Vue.use(Router)
 
 const router = new Router({
-  routes: [{
+  routes: [
+    {
       path: '*',
-      redirect: 'login',
-    }, {
-      path: '*',
-      redirect: '/',
-    }, {
+      redirect: 'AddBook',
+    }, 
+    // {
+    //   path: '*',
+    //   redirect: '/',
+    // },
+     {
       path: '/home',
       name: 'home',
       component: Home,
-      meta: {
-        requiresAuth: true,
-      }
+      // meta: {
+      //   requiresAuth: true,
+      // }
     },
 
     {
       path: '/addbook',
       name: 'AddBook',
       component: AddBook,
-      meta: {
-        requiresAuth: true,
-      }
+      // meta: {
+      //   requiresAuth: true,
+      // }
     },
     {
       path: '/login',
@@ -40,13 +43,13 @@ const router = new Router({
   ]
 });
 
-router.beforeEach((to, from, next) => {
-  // to and from are both route objects. must call `next`.
-  const currentUser = firebase.auth().currentUser;
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  if (requiresAuth && !currentUser) next('login');
-  else if (!requiresAuth && currentUser) next('home');
-  else next();
-});
+// router.beforeEach((to, from, next) => {
+//   // to and from are both route objects. must call `next`.
+//   const currentUser = firebase.auth().currentUser;
+//   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+//   if (requiresAuth && !currentUser) next('login');
+//   else if (!requiresAuth && currentUser) next('home');
+//   else next();
+// });
 
 export default router;
