@@ -25,6 +25,7 @@ export default {
         .then(
           user => {
             this.$router.replace("home");
+            this.$store.commit('savelogin');
           },
           err => {
             alert("err");

@@ -4,7 +4,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        // job: []
+        loginState: []
     },
     getters: {
         // getJob(state) {
@@ -49,8 +49,17 @@ const store = new Vuex.Store({
         // }
     },
     mutations: {
-        // saveJobs(state, payload) {
-        //     state.job = payload;
-        // },
+        savelogin(state, payload) {
+            state.loginState = payload;
+        },
     }
 });
+
+
+export default{
+    // state,
+    // getters,
+    // mutations,
+    // actions
+    store
+}
